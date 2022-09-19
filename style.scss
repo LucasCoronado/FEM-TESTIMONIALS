@@ -1,0 +1,107 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+// Colors
+$primary-violet: hsl(263, 55%, 52%);
+$primary-grayblue: hsl(217, 19%, 35%);
+$primary-blackblue: hsl(219, 29%, 14%);
+$light-gray: hsl(0, 0%, 81%);
+$ligth-gray-blue: hsl(210, 46%, 95%);
+
+// Font-weight
+$regular: 500;
+$semi-bold: 600;
+
+body {
+    font-family: "Barlow Semi Condensed", sans-serif;
+    background-color: $ligth-gray-blue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column nowrap;
+    padding: 25px;
+}
+
+.tarjeta {
+    max-width: 60%;
+    border-radius: 7px;
+    // margin: 10px auto;
+    padding: 20px;
+    background-color: white;
+    .nombre {
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 15px;
+        padding-bottom: 10px;
+        img {
+            width: 20px;
+            border-radius: 10px;
+            // border: 1px;
+        }
+        h2 {
+            font-size: 10px;
+            font-weight: $semi-bold;
+            color: white;
+        }
+        .clr {
+            color: $primary-grayblue;
+        }
+        h4 {
+            font-size: 8px;
+            opacity: 50%;
+            color: $light-gray;
+        }
+    }
+    .textBold {
+        font-weight: $semi-bold;
+        font-size: 13px;
+        padding-bottom: 10px;
+        color: white;
+    }
+    .text {
+        font-size: 9.4px;
+        font-weight: $regular;
+        color: $light-gray;
+        opacity: 70%;
+    }
+    .clr {
+        color: $primary-grayblue;
+    }
+}
+
+.violet {
+    background-color: $primary-violet;
+}
+
+.gray {
+    background-color: $primary-grayblue;
+}
+
+.blue {
+    background-color: $primary-blackblue;
+}
+
+@media screen and (min-width: 500px) {
+    body {
+        .tarjeta {
+            max-width: 100%;
+            // min-width: 60%;
+            margin: auto 0;
+        }
+        .grid-col-span-2 {
+            grid-column: span 2;
+        }
+        .last {
+           grid-column: 4;
+           grid-row: 1/3;
+        }
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: 
+       repeat(4, 1fr);
+    }
+}
